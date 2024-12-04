@@ -27,7 +27,7 @@ const placeOrder = async (req,res) => {
             paymentMethod: 'COD',
             payment: false,
             date: Date.now(),
-        }
+        };
 
         const newOrder = new orderModel(orderData);
         await newOrder.save();
@@ -38,7 +38,7 @@ const placeOrder = async (req,res) => {
         console.log(error);
         res.json({success: false, message: error.message});
     }
-}
+};
 
 // payment using stripe
 const placeOrderStripe = async (req,res) => {
@@ -54,7 +54,7 @@ const placeOrderStripe = async (req,res) => {
             paymentMethod: 'Stripe',
             payment: false,
             date: Date.now(),
-        }
+        };
         const newOrder = new orderModel(orderData);
         await newOrder.save();
 
@@ -67,7 +67,7 @@ const placeOrderStripe = async (req,res) => {
                 unit_amount: item.price * 100,
             },
             quantity: item.quantity,
-        }))
+        }));
         line_items.push({
             price_data: {
                 currency: currency,
@@ -91,7 +91,7 @@ const placeOrderStripe = async (req,res) => {
         console.log(error);
         res.json({success: false, message: error.message});
     }
-}
+};
 
 // Verify Stripe Payment
 const verifyStripe = async (req,res) => {
@@ -109,7 +109,7 @@ const verifyStripe = async (req,res) => {
         console.log(error);
         res.json({success: false, message: error.message});
     }
-}
+};
 
 // payment using razorpay
 const placeOrderRazorpay = async (req,res) => {
@@ -124,7 +124,7 @@ const placeOrderRazorpay = async (req,res) => {
             paymentMethod: 'Razorpay',
             payment: false,
             date: Date.now(),
-        }
+        };
         const newOrder = new orderModel(orderData);
         await newOrder.save();
 
@@ -147,7 +147,7 @@ const placeOrderRazorpay = async (req,res) => {
         console.log(error);
         res.json({success: false, message: error.message});
     }
-}
+};
 
 // Verify razorpay payment
 const verifyRazorpay = async (req,res) => {
@@ -177,7 +177,7 @@ const allOrders = async (req,res) => {
         console.log(error);
         res.json({success: false, message: error.message});
     }
-}
+};
 
 // User Order Data for frontend
 const userOrders = async (req,res) => {
@@ -189,7 +189,7 @@ const userOrders = async (req,res) => {
         console.log(error);
         res.json({success: false, message: error.message});
     }
-}
+};
 
 // Update order status from admin
 const updateStatus = async (req,res) => {
@@ -201,6 +201,6 @@ const updateStatus = async (req,res) => {
         console.log(error);
         res.json({success: false, message: error.message});
     }
-}
+};
 
 export { verifyRazorpay, verifyStripe, placeOrder, placeOrderStripe, placeOrderRazorpay, allOrders, userOrders, updateStatus };

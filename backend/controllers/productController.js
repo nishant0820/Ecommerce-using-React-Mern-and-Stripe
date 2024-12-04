@@ -29,7 +29,7 @@ const addProduct = async (req, res) => {
             sizes: JSON.parse(sizes),
             bestSeller: bestSeller === 'true' ? true : false,
             date: Date.now()
-        }
+        };
 
         console.log(productData);
 
@@ -42,7 +42,7 @@ const addProduct = async (req, res) => {
         console.log(error);
         res.json({ success: false, message: error.message });
     }
-}
+};
 
 // List product
 const listProduct = async (req, res) => {
@@ -53,7 +53,7 @@ const listProduct = async (req, res) => {
         console.log(error);
         res.json({ success: false, message: error.message });
     }
-}
+};
 
 // Remove product
 const removeProduct = async (req, res) => {
@@ -64,7 +64,7 @@ const removeProduct = async (req, res) => {
         console.log(error);
         res.json({ success: false, message: error.message });
     }
-}
+};
 
 // single product info
 const singleProduct = async (req, res) => {
@@ -76,6 +76,6 @@ const singleProduct = async (req, res) => {
         console.log(error);
         res.json({ success: false, message: error.message });
     }
-}
+};
 
 export { addProduct, listProduct, removeProduct, singleProduct };

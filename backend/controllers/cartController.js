@@ -22,7 +22,7 @@ const addToCart = async (req,res) => {
         console.log(error);
         res.json({ success: false, message: error.message });
     }
-}
+};
 // update cart
 const updateCart = async (req,res) => {
     try {
@@ -36,7 +36,7 @@ const updateCart = async (req,res) => {
         console.log(error);
         res.json({ success: false, message: error.message });
     }
-}
+};
 // get cart
 const getUserCart = async (req,res) => {
     try {
@@ -48,6 +48,6 @@ const getUserCart = async (req,res) => {
         console.log(error);
         res.json({ success: false, message: error.message });
     }
-}
+};
 
 export {addToCart,updateCart,getUserCart};

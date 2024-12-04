@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
 
 const createToken = (id) => {
     return jwt.sign({ id },process.env.JWT_SECRET);
-}
+};
 
 // Route for user login
 const loginUser = async (req, res) => {
@@ -28,7 +28,7 @@ const loginUser = async (req, res) => {
         console.log(error);
         res.json({ success: false, message: error.message });
     }
-}
+};
 
 // Route for user registration
 const registerUser = async (req, res) => {
@@ -67,7 +67,7 @@ const registerUser = async (req, res) => {
     }
 
 
-}
+};
 
 // Route for admin login
 const adminLogin = async (req, res) => {
@@ -83,6 +83,6 @@ const adminLogin = async (req, res) => {
         console.log(error);
         res.json({ success: false, message: error.message });
     }
-}
+};
 
 export { loginUser, registerUser, adminLogin };
