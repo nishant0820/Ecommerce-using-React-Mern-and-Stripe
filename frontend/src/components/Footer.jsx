@@ -4,11 +4,11 @@ import { assets } from '../assets/assets'
 const Footer = () => {
   return (
     <div>
-        <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm'>
+        <div className='flex flex-col sm:grid grid-cols-[2fr_1fr_1fr] gap-10 my-10 mt-40 text-sm'>
             <div>
                 <img src={assets.logo} className='mb-5 w-32' alt="" />
                 <p className='w-full md:w-2/3 text-gray-600'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    At Ved Stationary, we bring your ideas to life with premium stationery crafted for professionals, students, and creative minds. Our mission is to inspire creativity while embracing sustainability.
                 </p>
             </div>
             <div>
@@ -16,8 +16,9 @@ const Footer = () => {
                 <ul className='flex flex-col gap-1 text-gray-600'>
                     <li>Home</li>
                     <li>About us</li>
-                    <li>Delivery</li>
                     <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                    <li>Return Policy</li>
                 </ul>
             </div>
             <div>
