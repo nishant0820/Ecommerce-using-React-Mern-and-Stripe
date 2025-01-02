@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken';
 
 
 const createToken = (id) => {
-    return jwt.sign({ id },process.env.JWT_SECRET);
+    return jwt.sign({ id }, process.env.JWT_SECRET);
 };
 
 // Route for user login
@@ -21,7 +21,7 @@ const loginUser = async (req, res) => {
             const token = createToken(user._id);
             res.json({ success: true, token });
         }
-        else{
+        else {
             res.json({ success: false, message: "Invalid credentials" });
         }
     } catch (error) {
@@ -74,9 +74,9 @@ const adminLogin = async (req, res) => {
     try {
         const { email, password } = req.body;
         if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
-            const token = jwt.sign(email+password, process.env.JWT_SECRET);
-            res.json({ success: true, token });   
-        }else{
+            const token = jwt.sign(email + password, process.env.JWT_SECRET);
+            res.json({ success: true, token });
+        } else {
             res.json({ success: false, message: "Invalid credentials" });
         }
     } catch (error) {
